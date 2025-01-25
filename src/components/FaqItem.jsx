@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { useState } from "react";
-import { SlideDown } from "react-slidedown";
-import "react-slidedown/lib/slidedown.css";
+// import { SlideDown } from 'react-slidedown';
 
 const FaqItem = ({ item, index }) => {
   const [activeId, setActiveId] = useState(null);
@@ -39,11 +38,19 @@ const FaqItem = ({ item, index }) => {
           <div className="g4 size-11/12 rounded-full shadow-300" />
         </div>
       </div>
-      <SlideDown closed={!active}>
-        {/* {activeId === item.id && ( */}
+      {/* <SlideDown closed={!active}> */}
+      {/* {activeId === item.id && ( */}
+      {/* <div className="body-3 px-7 py-3.5">{item.answer}</div> */}
+      {/* )} */}
+      {/* </SlideDown> */}
+      <div
+        className={clsx(
+          "overflow-hidden transition-all duration-500 ease-in-out",
+          active ? "max-h-[2000px]" : "max-h-0"
+        )}
+      >
         <div className="body-3 px-7 py-3.5">{item.answer}</div>
-        {/* )} */}
-      </SlideDown>
+      </div>
       <div
         className={clsx(
           "g5 -bottom-7 -top-7 left-0 right-0 -z-1 rounded-3xl transition-opacity duration-500 absolute",
